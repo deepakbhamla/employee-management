@@ -42,7 +42,11 @@
     - source env\bin\activate
 - Install Django packages used in this project
   - pip install -r requirements.txt
-  
+
+- Run makemigrations and migrate
+  - python manage.py makemigrations
+  - python manage.py migrate
+
 - Run the Django Server
   - python manage.py runserver
 
