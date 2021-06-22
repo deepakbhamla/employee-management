@@ -1,0 +1,31 @@
+{% if company_list.has_other_pages %}
+<nav aria-label="Page navigation" class="mt-5" style="box-shadow: none;">
+  <ul class="pagination pagination-md justify-content-center" style="border-color: #2596be;">
+    {% if company_list.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ users.previous_page_number }}" tabindex="-1">Previous</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link"  tabindex="-1">Previous</a>
+    </li>
+    {% endif %}
+    {% for i in company_list.paginator.page_range %}
+      {% if company_list.number == i %}
+        <li class="page-item active"><a class="page-link" style="color:#333;background-color:#f5f5f5;border: 1px solid #2596be;" href="#">{{i}}</a></li>
+      {% else %}
+      <li class="page-item"><a class="page-link" href="?page={{ i }}">{{i}}</a></li>
+      {% endif %}
+      {% endfor %}
+      {% if company_list.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ company_list.next_page_number }}" >Next</a>
+        </li>
+      {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#" >Next</a>
+      </li>
+      {% endif %}
+  </ul>
+</nav>
+{% endif %}

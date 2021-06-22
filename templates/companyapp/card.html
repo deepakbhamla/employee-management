@@ -1,0 +1,42 @@
+{% if search_result %}
+   <p class="text-muted mt-3 mb-3" >Search Result :</p>
+{% endif %}
+{% if company_list %}
+{% for item in company_list %}
+<div class="card mt-4"> 
+  <a href="{% url 'companyapp:employee_list' item.slug %}" style="text-decoration: none;">
+    <div class="card-body">
+      <h5 class="card-title">
+          <img src="https://img.icons8.com/fluent/48/000000/skyscrapers.png"/> {{item.company_name}}
+          {% if item.is_working %}
+             <span class="text-light" style="float: right;font-size: 12px;">
+              <img src="https://img.icons8.com/fluent/38/000000/sports-mode.png"/>
+          </span>
+          {% else %}
+          <span class="text-light" style="float: right;font-size: 12px;">
+            <img src="https://img.icons8.com/color/38/000000/lazy.png"/>
+        </span>
+
+          {% endif %} 
+      </h5>
+      <ul style="list-style-type: none;" class="detail-list p-0">
+          <li>founder : {{item.founder_name}}</li>
+          <li>ref. no : {{item.refrence_number}} </li>
+          <li>Headquator : {{item.address}} </li>
+          <li>Total employee : {{item.employee.all.count}} </li>
+          <li>Fund raise : {{item.total_fund_raise}} </li>
+      </ul>
+      <a class="btn btn-outline-light pt-1 pb-1" style="font-size: 12px;"  data-bs-toggle="modal" data-bs-target="#staticBackdropeditcompany{{item.id}}">Edit</a>
+      {% include 'companyapp/edit-company.html' %}
+    </div>
+  </a>
+</div>
+{% endfor %}
+{% else %}
+<div class="no-data">
+  <img class="center" src="https://img.icons8.com/ios/200/eeeeee/company.png"/>
+    <h5 class="text-center">no company available</h5>
+  <p class="text-center text-muted" style="font-size: 12px;">you can add new company or populate from database</h6>
+
+</div>
+{% endif %}

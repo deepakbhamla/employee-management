@@ -1,0 +1,28 @@
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">          
+              <img src="https://www.salarybox.in/media/Asset8.png" width="120px" alt="">
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'companyapp:add-employee'%}" method="POST">
+            {% csrf_token %} 
+            <input class="form-control me-2 data-form p-2" type="text" placeholder="First Name" name="first_name" required>
+            <input class="form-control me-2 data-form p-2" type="text" placeholder="Last Name" name="last_name" required>
+            <input class="form-control me-2 data-form p-2" type="text" placeholder="Address" name="address" required>
+            <input class="form-control me-2 data-form p-2" type="number" placeholder="Experiance" name="experiance" required>
+
+            <div style="display: flex;justify-content: center;">
+                <button class="btn btn-outline m-1" type="submit" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-outline m-1" type="submit">Submit</button>
+             </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

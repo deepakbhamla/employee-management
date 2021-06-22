@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>pdf</title>
+  <style>
+    body {
+      background-color: #ffff;
+    }
+    img{
+        width: 150px;
+    }
+    h1{
+        text-align: center;
+        color: #2596be;
+    }
+    table {
+       width:100%;
+       font-size: 13px;
+    }
+    table, th, td {
+      border: 1px solid #2596be;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+    #t01 tr:nth-child(even) {
+      background-color: #eee;
+    }
+    #t01 tr:nth-child(odd) {
+     background-color: #fff;
+    }
+    .center {
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto
+  }
+
+
+  </style>
+</head>
+<body>
+    <img src="https://www.salarybox.in/media/Asset8.png"  alt="">
+    <span style="float: right;">refrence no : {{ref_no}}</span>
+    <h1>{{company_name}}</h1>
+    <br>
+    <br>
+    <p>Employee List</p>
+    {% if employee_list %}
+    <table>
+        <tr>
+          <th>#Id</th>
+          <th>Name</th> 
+          <th>Address</th>
+          <th>Created On</th>
+          <th>Experiance</th>
+        </tr>
+        {% for item in employee_list %}
+        <tr>
+              <td>{{item.id}}</td>
+              <td>{{item.first_name}} {{item.last_name}}</td>
+              <td>{{item.address}}</td>
+              <td>{{item.created_date}}</td>
+              <td>{{item.experiance}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+      <div>
+        <img class="center" src="https://img.icons8.com/dotty/200/000000/employee-card.png"  alt="">
+        <p style="text-align:center;">There is no employee registered in this company</p>
+      </div>
+    {% endif %}
+    <br>
+    <br>
+      <p style="text-align: center;">salarbox inc </p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/card.css' %}">
+{% endblock %}
+
+{% block template %}
+      <div class="desktop">
+        {% include "companyapp/header.html" %}  
+        {% include "companyapp/add-company.html" %}    
+   
+        <div class="container">
+              <div class="row">
+                  <div class="col-xl-8 col-lg-8 col-md-8  col-sm-12 col-12 pt-1 mb-5"> 
+                    {% include "companyapp/card.html" %}   
+                    {% include "companyapp/pagination.html" %}    
+    
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4  col-sm-12 col-12 pt-1">
+                      <div class="sticky-right">
+                        <div class="add-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <h1 class="text-center"><i class="fas fa-plus"></i></h1>
+                            <h6 class="text-center">add new company</h6>
+                        </div>  
+                        {% include "companyapp/alert.html" %}       
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>     
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+    | Employee |
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/card.css' %}">
+{% endblock %}
+
+{% block template %}
+      <div class="desktop">
+        {% include "companyapp/header.html" %}
+        {% include "companyapp/add-employee.html" %}       
+        <div class="container">
+              <div class="row">
+                  <div class="col-xl-9 col-lg-9 col-md-9  col-sm-12 col-12 pt-1" >
+                    {% include "companyapp/employee-card.html" %}       
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-3  col-sm-12 col-12 pt-1">
+                    <div class="add-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <h1 class="text-center">
+                            <img src="https://img.icons8.com/fluent/48/000000/skyscrapers.png"/>
+                        </h1>
+                        <h6 class="text-center">{{company}}</h6>
+                    </div>
+                    <div class="add-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                        <h1 class="text-center">{{ employee_list.count }}</h1>
+                        <h6 class="text-center">total employee</h6>
+                    </div>
+                    <div  class="add-btn" >
+                        <a href="{% url 'companyapp:pdf-download' company %}" style="text-decoration: none;">
+                            <h1 class="text-center"><i class="fas fa-file-pdf"></i></h1>
+                            <h6 class="text-center">download pdf</h6>
+                        </a>    
+                    </div>
+                    <div class="add-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                        <h1 class="text-center"><i class="fas fa-plus"></i></h1>
+                        <h6 class="text-center">add new employee</h6>
+                    </div>
+
+                    {% include "companyapp/alert.html" %}       
+
+                </div>
+              </div>
+          </div>
+      </div>     
+{% endblock %}
