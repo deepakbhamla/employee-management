@@ -1,1 +1,4 @@
 venv/
+your_static_folder
+__pycache__
+project/__pycache__

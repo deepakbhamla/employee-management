@@ -1,5 +1,7 @@
 # SalaryBox
-#### assignmment
+### Demo - https://salary-box.herokuapp.com/
+#### Code - https://github.com/deepakbhamla/employee-management
+#### Detail Brochure
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -14,7 +16,7 @@
 - requirements.txt
 - get_started.pdf
 
-## What Technology user
+## What Technology use
 - Python
 - Django
 - Bootsrap
@@ -51,5 +53,5 @@
   - python manage.py runserver
 
 - after sometime open  https://localhost:8000  in your chrome
-#### Note :- from my side everything is perfact and tested many time but it is also possible some error and bug can be found IN CASE please contact me AT dbhamla7@gmail.com
+#### Note :- from my side everything is perfact and tested many time but it is also possible some error and bug can be found IN CASE please contact me at dbhamla7@gmail.com
 
